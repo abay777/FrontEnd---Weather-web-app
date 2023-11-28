@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/styles.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <section class="container">
+        <header class="top-section">
+            <input class="search-bar" id="searchInput" type="text" placeholder="City Name (eg:-palakkad)">
+            <button class="search-button" ><img src="images/search.png" alt=""></button>
+        </header>
+         <span class="error-message">&#9940; Invalid city name</span>
+
+        <div class="middle-section">
+            <img src="images/clear.png" class="weather-image" id="weatherIcon">
+            <span class="temp" id="temp">23&deg;</span>
+            <span class="city" id="city">bangalore</span>
+        </div>
+
+        <footer class="bottom-section">
+            <div class="bottom-left">
+                <img class="humid-image" src="images/humidity.png">
+                <div class="bottom-texts">
+                    <span class="sub-title" id="humidity">53%</span>
+                    <span class="title">Humidity</span>
+                </div>
+
+                <div class="bottom-right">
+                    <img class="wind-image" src="images/wind.png">
+                    <div class="bottom-texts">
+                        <span class="sub-title" id="wind">5.3Km/h</span>
+                        <span class="title">Wind</span>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </section>
+
+
+
+
+    <script src="scripts/script.js"></script>
+</body>
+
+</html>
