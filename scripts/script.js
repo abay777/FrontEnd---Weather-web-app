@@ -34,14 +34,14 @@ const apiURL = "https://api.openweathermap.org/data/2.5/weather?units=metric";
             errorMessage.style.display='none';
             const response = await fetch(apiURL + `&appid=${apiKey}&q=${userInput}`)
             var data = await response.json()
-            console.log(data);
             const city = data.name;
             const humidity = data.main.humidity;
             const windSpeed = data.wind.speed;
             const temperature = data.main.temp;
             let weather = "";
            data.weather.forEach(element => {
-                weather = element.main;
+               weather = (element.main);
+               weather =weather.toLowerCase()
                 
             });
            const setWeather =document.getElementById('weatherIcon').setAttribute('src',`images/${weather}.png`);
