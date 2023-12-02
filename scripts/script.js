@@ -5,13 +5,12 @@ const apiURL = "https://api.openweathermap.org/data/2.5/weather?units=metric";
 
 
  async function checkWeather(){
-        let userInput = '';
-        const errorMessage = document.querySelector('.error-message');
-            errorMessage.style.display='none';
+    let userInput = '';
+    const errorMessage = document.querySelector('.error-message');
+    errorMessage.style.display='none';
     const searchButton = document.querySelector('.search-button');
     searchButton.addEventListener('click',async () => {
         userInput = Search();
-        console.log(userInput);
         await getWeather(userInput);
         const Input=document.getElementById('searchInput');
         Input.value='';
@@ -41,26 +40,21 @@ const apiURL = "https://api.openweathermap.org/data/2.5/weather?units=metric";
             let weather = "";
            data.weather.forEach(element => {
                weather = (element.main);
-               weather =weather.toLowerCase()
-                
+               weather =weather.toLowerCase()                
             });
-           const setWeather =document.getElementById('weatherIcon').setAttribute('src',`images/${weather}.png`);
+         
+           const setWeather = document.getElementById('weatherIcon').setAttribute('src',`images/${weather}.png`);
             console.log(weather);
             document.getElementById('city').innerHTML=city;
-            document.getElementById('humidity').innerHTML=`${humidity}%`
-            document.getElementById('wind').innerHTML=`${windSpeed} Km/h`
-            document.getElementById('temp').innerHTML=`${temperature}&deg;`
-            
+            document.getElementById('humidity').innerHTML=`${humidity}%`;
+            document.getElementById('wind').innerHTML=`${windSpeed} Km/h`;
+            document.getElementById('temp').innerHTML=`${temperature}&deg;`;   
         } catch (error) {
             const errorMessage = document.querySelector('.error-message');
             errorMessage.style.display='block';
-            console.error('Error fetching weather data:', error);
-          
-        }
-       
-    }
-
-    
+            console.error('Error fetching weather data:', error); 
+        }  
+    }    
 }
 checkWeather()
 
